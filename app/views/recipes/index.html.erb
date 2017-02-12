@@ -1,0 +1,26 @@
+<h1>Recipes</h1>
+
+<% if @recipes.nil? %>
+
+<p>No recipes found with relevant information... Sorry</p>
+
+<% else %>
+
+<table border="1">
+	<tr>
+		<th>Image</th>
+		<th>Title</th>
+		<th>Social Rank</th>
+	</tr>
+	<% @recipes.each do |recipe| %>
+		<tr class=<%= cycle('even', 'odd') %>>
+			<th><a href="<%= recipe["source_url"] %>"><%= image_tag(recipe["image_url"], height: '100', width: '100')%></a></th>
+			<th><%= link_to "#{sanitize recipe["title"]}", recipe["source_url"] %></th>
+			<th><%= recipe["social_rank"]%></th>
+		</tr>
+	<% end %>
+</table>
+
+<% end %>
+
+<p>Powered By Food2Fork.com</p>
