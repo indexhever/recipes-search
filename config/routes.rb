@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'recipes/index'
 
   get 'greeter/hi' => "greeter#hello"
