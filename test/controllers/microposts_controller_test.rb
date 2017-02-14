@@ -4,7 +4,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @micropost = microposts(:one)
   end
-
+=begin
   test "should get index" do
     get microposts_url
     assert_response :success
@@ -45,4 +45,5 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to microposts_url
   end
+=end
 end

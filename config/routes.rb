@@ -3,14 +3,15 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
+  get 'static_pages/about'
+
   resources :microposts
   resources :users
   get 'recipes/index'
 
-  get 'greeter/hi' => "greeter#hello"
-  get 'greeter/goodbye'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'recipes#index'
+  #root 'static_pages#home'
   #root 'users#index'
 end
